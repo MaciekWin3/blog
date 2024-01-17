@@ -14,9 +14,7 @@ def hello_world():
 def template():
     return render_template("index.html")
 
-
 #def get_articles_from_github(): 
-    
 
 @app.route('/call')
 def get_html_content():
