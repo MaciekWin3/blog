@@ -1,26 +1,30 @@
 {% extends 'base.html' %} {% block content %}
-<div class="columns is-desktop is-flex is-vcentered is-centered mx-4 my-4">
-  <div class="column has-text-centered">
-    <p class="title">Maciej Winnik</p>
-    <p class="subtitle">Software Enginner</p>
-  </div>
-  <div class="column is-half">
-    <img
-      src="./static/images/me.jpg"
-      alt="Me"
-      width="400"
-      height="400"
-      class="me box"
-    />
+<div class="container mt-4">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-6 text-center">
+      <h1 class="display-4">Maciej Winnik</h1>
+      <p class="lead">Software Engineer</p>
+    </div>
+    <div class="col-md-6 text-center">
+      <img
+        src="./static/images/me.jpg"
+        alt="Me"
+        width="350"
+        height="350"
+        class="img-fluid rounded-circle border border-primary mb-3 me"
+      />
+    </div>
   </div>
 </div>
-<p>This is template</p>
+
+<p class="mt-4">This is a template</p>
+
 {% if 2 == 3 %}
 <h1>Hello {{ name }}!</h1>
 {% endif %}
-<div x-data="{ count: 0 }">
-  <button x-on:click="count++">Increment</button>
 
-  <span x-text="count"></span>
+<div x-data="{ count: 0 }" class="text-center mt-3">
+  <button class="btn btn-primary" x-on:click="count++">Increment</button>
+  <span class="ml-2 font-weight-bold" x-text="count"></span>
 </div>
 {% endblock %}

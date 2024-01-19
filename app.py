@@ -1,6 +1,5 @@
-from flask import Flask, render_template, render_template_string, abort
+from flask import Flask, render_template, abort
 from markupsafe import escape
-from urllib.request import urlopen
 import markdown
 import requests
 
@@ -10,7 +9,7 @@ repo = "blog"
 app = Flask(__name__)
 
 @app.route("/")
-def template():
+def index():
     return render_template("index.html")
 
 @app.route("/article/<name>")
