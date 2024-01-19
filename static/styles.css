@@ -1,0 +1,18 @@
+body {
+    background-color: white;
+}
+
+[x-cloak] {
+    display: none;
+}
+
+.me {
+    border-radius: 100%;
+    animation-name: pictureFromLeft;
+    animation-duration: 2s;
+}
+
+@keyframes pictureFromLeft {
+   from { transform: translateX(800px)}
+   to {transform: translateX(0);}
+}

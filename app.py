@@ -19,14 +19,13 @@ def get_articles_from_github(name):
     url_raw = "https://raw.githubusercontent.com/MaciekWin3/blog/main/"
     r = requests.get(url)
     res = r.json()
-    print(res)
 
     for file in res["tree"]:
         if file["path"].endswith(".md") and file["path"] != "README.md":
             if file["path"] == "articles/" + escape(name) + ".md":
                 content = requests.get(url_raw + file["path"])
                 md = markdown.markdown(content.text)
-                return render_template_string(md)
+                return render_template("article.html", content=md)
             else:
                 continue
 

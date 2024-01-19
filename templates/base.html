@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./static/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./static/icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./static/icons/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <title>My website</title>
+  </head>
+  <body>
+    <nav class="navbar is-light has-shadow" id="navbar" x-data="{open: false}">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <p>Home</p>
+        </a>
+        <a class="navbar-item" href="#about">
+          <p>About</p>
+        </a>
+        <a class="navbar-item" href="#projects">
+          <p>Projects</p>
+        </a>
+        <a class="navbar-burger" @click="open =! open">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-menu" :class="open ? 'is-active' : ''">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <div class="control has-text-centered">
+                <a
+                  class="button is-medium"
+                  href="https://github.com/MaciekWin3/"
+                >
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Github</span>
+                </a>
+              </div>
+              <p class="control">
+                <a
+                  class="button is-medium is-info"
+                  href="https://www.linkedin.com/in/maciej-winnik/"
+                >
+                  <span class="icon">
+                    <i class="fa-brands fa-linkedin"></i>
+                  </span>
+                  <span>LinkedIn</span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div>{% block content %}{% endblock %}</div>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>Maciej Winnik © 2024</p>
+        <p>
+          Website powered by <strong>Bulma</strong> and
+          <strong>Alpine.js</strong>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
