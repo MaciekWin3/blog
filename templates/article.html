@@ -1,1 +1,5 @@
-{% extends 'base.html' %} {% block content %} {{ content|safe }} {% endblock %}
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-4">
+  <article class="my-4 p-4">{{ content|safe }}</article>
+</div>
+{% endblock %}
