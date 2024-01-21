@@ -1,11 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container mt-4">
   <div class="row justify-content-center align-items-center">
-    <div class="col-md-6 text-center">
+    <div class="col-md-4 text-center">
       <h1 class="display-4">Maciej Winnik</h1>
       <p class="lead">Software Engineer</p>
     </div>
-    <div class="col-md-6 text-center">
+    <div class="col-md-4 text-center">
       <img
         src="./static/images/me.jpg"
         alt="Me"
@@ -17,14 +17,135 @@
   </div>
 </div>
 
-<p class="mt-4">This is a template</p>
+<section class="mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-4 mb-3">
+      <h2>
+        About Me
+        <i class="fa-solid fa-address-card"></i>
+      </h2>
+      <p>
+        I am a software developer holding a Bachelor's degree in Computer
+        Science and Econometrics. Having a strong commitment to continuous
+        learning, I constantly strive to enhance my programming skills and stay
+        updated with emerging technologies. My primary expertise lies in the
+        .NET platform, where I specialize in the C# programming language. I
+        prioritize the delivery of high-quality code and excel in collaborative
+        team environments. In my leisure time, I actively engage in expanding my
+        knowledge of a diverse set of programming languages. Additionally, I
+        enjoy creating my own projects and contributing to open-source software.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-4 mb-3">
+      <h2>Tech Stack <i class="fa-solid fa-microchip"></i></h2>
+      <ul>
+        <li>C#</li>
+        <li>F#</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>SQL</li>
+        <li>Azure</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-4 mb-3">
+      <h2>Projects <i class="fa-solid fa-folder-open"></i></h2>
+    </div>
+  </div>
 
-{% if 2 == 3 %}
-<h1>Hello {{ name }}!</h1>
-{% endif %}
+  <div class="row justify-content-center">
+    <div class="col-md-2 mb-3">
+      <div class="card">
+        <img
+          src="https://raw.githubusercontent.com/MaciekWin3/Moonwalk/master/docs/logo.png"
+          class="card-img-top"
+          alt="Project 2"
+          height="200"
+        />
+        <div class="card-body">
+          <a href="https://github.com/MaciekWin3/Moonwalk">
+            <h5 class="card-title">MoonWalk</h5></a
+          >
+          <p class="card-text">
+            Implementaion of my own copmpiler and programming language.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2 mb-3">
+      <div class="card">
+        <img
+          src="https://raw.githubusercontent.com/MaciekWin3/TermKeyVault/master/docs/screenshots/main.png"
+          class="card-img-top"
+          alt="Project 1"
+          height="200"
+        />
+        <div class="card-body">
+          <a href="https://github.com/MaciekWin3/TermKeyVault">
+            <h5 class="card-title">TermKeyVault</h5>
+          </a>
+          <p class="card-text">
+            Terminal User Interface password manager written in F#.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div x-data="{ count: 0 }" class="text-center mt-3">
-  <button class="btn btn-primary" x-on:click="count++">Increment</button>
-  <span class="ml-2 font-weight-bold" x-text="count"></span>
-</div>
+  <div class="row justify-content-center">
+    <div class="col-md-2 mb-3">
+      <div class="card">
+        <img
+          src="https://raw.githubusercontent.com/gui-cs/Terminal.Gui/develop/docfx/images/sample.png"
+          class="card-img-top"
+          alt="Project 1"
+          height="200"
+        />
+        <div class="card-body">
+          <a href="https://github.com/gui-cs/Terminal.Gui">
+            <h5 class="card-title">Terminal.Gui</h5>
+          </a>
+          <p class="card-text">
+            An open-source project for building TUI apps, which I try to
+            contribute to.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-2 mb-3">
+      <div class="card">
+        <img
+          src="https://raw.githubusercontent.com/MaciekWin3/Whale/main/docs/demo.gif"
+          class="card-img-top"
+          alt="Project 2"
+          height="200"
+        />
+        <div class="card-body">
+          <a href="https://github.com/MaciekWin3/Whale">
+            <h5 class="card-title">Whale</h5>
+          </a>
+          <p class="card-text">
+            Terminal, lightweigth, crossplatform docker container manager
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-4 mb-3">
+      <p>
+        To see rest of them see my
+        <a href="https://github.com/MaciekWin3">github accout</a>
+      </p>
+    </div>
+  </div>
+</section>
 {% endblock %}
