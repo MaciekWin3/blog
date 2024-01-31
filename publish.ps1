@@ -14,10 +14,10 @@ $articlesFolder = "./articles/"
 # GitHub repo URL (raw content)
 $githubRepoURL = "https://raw.githubusercontent.com/MaciekWin3/blog/main"
 
-# Function to replace local image paths with GitHub repo paths
+# Function to replace local image paths with GitHub repo paths and update image tags
 function ReplaceImagePaths($file) {
     $content = Get-Content $file -Raw
-    $content = $content -replace '!\[image\]\(./assets/', "![image]($githubRepoURL/articles/assets/"
+    $content = $content -replace '!\[image\]\(./assets/(.+?)\)', '<p align="center"><img src="$githubRepoURL/articles/assets/$1" /></p>'
     Set-Content -Path $file -Value $content
 }
 
@@ -29,7 +29,7 @@ $markdownFiles = Get-ChildItem -Filter *.md
 
 # Loop through each markdown file
 foreach ($file in $markdownFiles) {
-    # Replace local image paths with GitHub repo paths
+    # Replace local image paths with GitHub repo paths and update image tags
     ReplaceImagePaths $file.FullName
 }
 
