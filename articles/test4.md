@@ -4,5 +4,5 @@
 
 A quote from rateher controversial figure but there is a lot of truth to it.
 
-![image](https://github.com/yourusername/your-repo/assets/wieczorem.jpg)
+![image](https://github.com/maciekwin3/blog/assets/wieczorem.jpg)
 
