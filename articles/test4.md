@@ -6,3 +6,4 @@ A quote from rateher controversial figure but there is a lot of truth to it.
 
 <p align="center"><img src="$githubRepoURL/articles/assets/wieczorem.jpg" /></p>
 
+

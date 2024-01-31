@@ -17,7 +17,7 @@ $githubRepoURL = "https://raw.githubusercontent.com/MaciekWin3/blog/main"
 # Function to replace local image paths with GitHub repo paths and update image tags
 function ReplaceImagePaths($file) {
     $content = Get-Content $file -Raw
-    $content = $content -replace '!\[image\]\(./assets/(.+?)\)', '<p align="center"><img src="$githubRepoURL/articles/assets/$1" /></p>'
+    $content = $content -replace '!\[image\]\(./assets/(.+?)\)', "<p align='center'><img src='$githubRepoURL/articles/assets/\$1' /></p>"
     Set-Content -Path $file -Value $content
 }
 
