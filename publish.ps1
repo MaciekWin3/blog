@@ -11,13 +11,13 @@ $originalLocation = Get-Location
 # Path to the articles folder
 $articlesFolder = "./articles/"
 
-# GitHub repo URL
-$githubRepoURL = "https://github.com/maciekwin3/blog"
+# GitHub repo URL (raw content)
+$githubRepoURL = "https://raw.githubusercontent.com/MaciekWin3/blog/main"
 
 # Function to replace local image paths with GitHub repo paths
 function ReplaceImagePaths($file) {
     $content = Get-Content $file -Raw
-    $content = $content -replace '!\[image\]\(./assets/', "![image]($githubRepoURL/assets/"
+    $content = $content -replace '!\[image\]\(./assets/', "![image]($githubRepoURL/articles/assets/"
     Set-Content -Path $file -Value $content
 }
 
