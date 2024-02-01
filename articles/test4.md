@@ -4,5 +4,10 @@
 
 A quote from rateher controversial figure but there is a lot of truth to it.
 
-<p align='center'><img src='https://raw.githubusercontent.com/MaciekWin3/blog/main/articles/assets/\' /></p>
+<p align="center"><img src="https://raw.githubusercontent.com/MaciekWin3/blog/main/articles/assets/wieczorem.jpg" alt="Custom image"/></p>
+
+
+
+
+
 

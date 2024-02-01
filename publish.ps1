@@ -2,45 +2,33 @@ param (
     [string]$commitTitle
 )
 
-# Add changes to git
 git add .
 
-# Record the current location
 $originalLocation = Get-Location
-
-# Path to the articles folder
 $articlesFolder = "./articles/"
-
-# GitHub repo URL (raw content)
 $githubRepoURL = "https://raw.githubusercontent.com/MaciekWin3/blog/main"
 
-# Function to replace local image paths with GitHub repo paths and update image tags
 function ReplaceImagePaths($file) {
     $content = Get-Content $file -Raw
-    $content = $content -replace '!\[image\]\(./assets/(.+?)\)', "<p align='center'><img src='$githubRepoURL/articles/assets/\$1' /></p>"
+    $fits = $content | Select-String '!\[image\]\(./assets/(.+?)\)' -AllMatches | ForEach-Object { $_.Matches }
+    
+    foreach ($match in $fits) {
+        $oldPath = $match.Groups[0].Value
+        $newPath = '<p align="center"><img src="' + $githubRepoURL + '/articles/assets/' + $match.Groups[1].Value + '" alt="Custom image"/></p>'
+        $content = $content -replace [regex]::Escape($oldPath), $newPath
+    }
+
     Set-Content -Path $file -Value $content
 }
 
-# Change to the articles folder
 Set-Location -Path $articlesFolder
-
-# Get all markdown files in the folder
 $markdownFiles = Get-ChildItem -Filter *.md
-
-# Loop through each markdown file
 foreach ($file in $markdownFiles) {
-    # Replace local image paths with GitHub repo paths and update image tags
     ReplaceImagePaths $file.FullName
 }
 
-# Add changes to git
-git add .
-
-# Commit changes with the specified title
-git commit -m $commitTitle
-
-# Push changes to GitHub
-git push
-
-# Return to the original location
 Set-Location -Path $originalLocation
+
+git add . 
+git commit -m $commitTitle
+git push
